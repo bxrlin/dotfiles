@@ -1,11 +1,12 @@
 #!/bin/bash
-#|---/ /+--------------------------+---/ /|#
-#|--/ /-| Main installation script |--/ /-|#
-#|-/ /--|        FRVR-BXRLIN       |-/ /--|#
-#|/ /---+--------------------------+/ /---|#
-
 
 cat << "EOF"
+
+#|---/ /+--------------------------+---/ /|#
+#|--/ /-| Main installation script |--/ /-|#
+#|-/ /-|            FRVR-BXRLIN         |-/ /--|#
+#|/ /---+--------------------------+/ /---|#
+
 -----------------------------------------------------------------
         .                                                     
        / \         _       _  _                  _     _      
@@ -18,10 +19,6 @@ cat << "EOF"
 
 EOF
 
-
-#--------------------------------#
-# import variables and functions #
-#--------------------------------#
 # Install yay package manager if not installed
 if ! command -v yay &> /dev/null; then
     git clone https://aur.archlinux.org/yay.git
@@ -45,6 +42,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # Zsh autosuggestions installation
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Copy .zshrc and .p10k.zsh files to home directory
+echo "Copying .zshrc and .p10k.zsh files to home directory..."
+
+cp .zshrc $HOME
+cp .p10k.zsh $HOME
+
+echo "Successfully copied .zshrc and .p10k.zsh files!"
 
 # Copy config files and wallpapers
 echo "Installing rchrdwllm's dotfiles..."
