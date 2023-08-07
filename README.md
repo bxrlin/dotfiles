@@ -1,6 +1,6 @@
 # @bxrlin Hyprland Rice on Arch Linux 
 
-#### originally Forked from @rchrdwllm
+#### Originally Forked from @rchrdwllm
 Here are my configuration files for this rice. This rice relies heavily on [Pywal](https://github.com/dylanaraps/pywal). Colors change as you change your wallpaper!
 
 ## Some features and configs
